@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form method="POST" action="{% url 'display_multiple_Accessrecord' %}">
+            {% csrf_token %}
+            
+            <h3>select Webpage</h3>
+            {% for wo in Webpage %}
+                <label for="pk">{{wo.name}}</label>
+                <input type="checkbox" name="pk" id="pk" value="{{wo.pk}}">
+            {% endfor %}
+            </select><br><br>
+
+
+            <input type="submit" value="checkbox_Accessrecord">
+        </form>
+       
+    </center>
+</body>
+</html>
